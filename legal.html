@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravity Jump - Legal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .tabs {
+            display: flex;
+            background: #f5f5f5;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            background: transparent;
+            font-size: 1em;
+        }
+
+        .tab:hover {
+            background: #e8e8e8;
+        }
+
+        .tab.active {
+            background: white;
+            border-bottom: 3px solid #667eea;
+            color: #667eea;
+        }
+
+        .lang-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .lang-btn {
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .lang-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .lang-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .content {
+            padding: 40px;
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .content h2 {
+            color: #667eea;
+            margin: 30px 0 15px 0;
+            font-size: 1.8em;
+        }
+
+        .content h3 {
+            color: #764ba2;
+            margin: 20px 0 10px 0;
+            font-size: 1.3em;
+        }
+
+        .content p, .content li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .content ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .content strong {
+            color: #333;
+        }
+
+        .footer {
+            background: #f5f5f5;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer p {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .tab {
+                font-size: 0.9em;
+                padding: 15px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎮 Gravity Jump</h1>
+            <p>Legal Information</p>
+        </div>
+
+        <div class="lang-selector">
+            <button class="lang-btn active" onclick="switchLang('en')">🇺🇸 English</button>
+            <button class="lang-btn" onclick="switchLang('ko')">🇰🇷 한국어</button>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('terms')">Terms of Service</button>
+            <button class="tab" onclick="switchTab('privacy')">Privacy Policy</button>
+        </div>
+
+        <!-- English Terms -->
+        <div id="terms-en" class="content active">
+            <h2>Terms of Service</h2>
+            <p><em>Last Updated: November 2025</em></p>
+
+            <h3>Article 1 (Purpose)</h3>
+            <p>These Terms of Service govern the use of the Gravity Jump mobile game service (hereinafter "Service") provided by Unibox Labs (hereinafter "Company") and define the rights, obligations, and responsibilities between the Company and users.</p>
+
+            <h3>Article 2 (Service Provision)</h3>
+            <p><strong>1. The Company provides the following services:</strong></p>
+            <ul>
+                <li>Gameplay service</li>
+                <li>Global ranking service</li>
+                <li>Nickname registration service</li>
+            </ul>
+            <p><strong>2.</strong> The Service is provided 24 hours a day, 365 days a year in principle.</p>
+
+            <h3>Article 3 (Use of Service)</h3>
+            <p><strong>1.</strong> The Service is free of charge.</p>
+            <p><strong>2.</strong> Users are deemed to have agreed to these Terms.</p>
+            <p><strong>3.</strong> When registering a nickname, users must comply with the following:</p>
+            <ul>
+                <li>Must be between 2 and 12 characters</li>
+                <li>Must not infringe on others' rights</li>
+                <li>Profanity, vulgar language, and hate speech are prohibited</li>
+            </ul>
+
+            <h3>Article 4 (Collection and Use of Personal Information)</h3>
+            <p><strong>1. Information collected by the Company:</strong></p>
+            <ul>
+                <li>Nickname (user input)</li>
+                <li>Game score</li>
+                <li>Device unique identifier (UUID, app-generated)</li>
+            </ul>
+            <p><strong>2. Purpose of collection:</strong></p>
+            <ul>
+                <li>Provide global ranking service</li>
+                <li>Check nickname duplicates</li>
+                <li>Save game records</li>
+            </ul>
+            <p><strong>3.</strong> Personal information is used only for service provision and is not provided to third parties.</p>
+
+            <h3>Article 5 (User Obligations)</h3>
+            <p><strong>1. Users must not engage in the following:</strong></p>
+            <ul>
+                <li>Score manipulation by fraudulent means</li>
+                <li>Impersonation of others' nicknames</li>
+                <li>Interference with service operation</li>
+            </ul>
+            <p><strong>2.</strong> Violations may result in service restrictions.</p>
+
+            <h3>Article 6 (Service Suspension)</h3>
+            <p><strong>1. The Company may temporarily suspend service in the following cases:</strong></p>
+            <ul>
+                <li>System inspection and maintenance</li>
+                <li>Natural disasters or national emergencies</li>
+                <li>Service facility failures</li>
+            </ul>
+
+            <h3>Article 7 (Disclaimer)</h3>
+            <p><strong>1.</strong> The Company is exempt from liability if unable to provide service due to force majeure such as natural disasters.</p>
+            <p><strong>2.</strong> The Company is not responsible for service use disruptions caused by users.</p>
+
+            <h3>Article 8 (Governing Law and Jurisdiction)</h3>
+            <p><strong>1.</strong> These Terms are governed by the laws of the Republic of Korea.</p>
+            <p><strong>2.</strong> Disputes related to service use shall be subject to the exclusive jurisdiction of the court having jurisdiction over the Company's headquarters.</p>
+
+            <h3>Article 9 (Contact)</h3>
+            <ul>
+                <li><strong>Company:</strong> Unibox Labs</li>
+                <li><strong>Email:</strong> rhsoh1@gmail.com</li>
+            </ul>
+
+            <hr style="margin: 30px 0; border: none; border-top: 1px solid #e0e0e0;">
+            <p><em>These Terms are effective from November 2025.</em></p>
+        </div>
+
+        <!-- Korean Terms -->
+        <div id="terms-ko" class="content">
+            <h2>서비스 이용약관</h2>
+            <p><em>최종 업데이트: 2025년 11월</em></p>
+
+            <h3>제1조 (목적)</h3>
+            <p>본 약관은 Unibox Labs(이하 "회사")가 제공하는 Gravity Jump 모바일 게임 서비스(이하 "서비스")의 이용과 관련하여 회사와 이용자 간의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
+
+            <h3>제2조 (서비스의 제공)</h3>
+            <p><strong>1. 회사는 다음과 같은 서비스를 제공합니다:</strong></p>
+            <ul>
+                <li>게임 플레이 서비스</li>
+                <li>글로벌 랭킹 서비스</li>
+                <li>닉네임 등록 서비스</li>
+            </ul>
+            <p><strong>2.</strong> 서비스는 연중무휴, 1일 24시간 제공함을 원칙으로 합니다.</p>
+
+            <h3>제3조 (서비스 이용)</h3>
+            <p><strong>1.</strong> 서비스 이용은 무료입니다.</p>
+            <p><strong>2.</strong> 이용자는 본 약관에 동의한 것으로 간주됩니다.</p>
+            <p><strong>3.</strong> 닉네임 등록 시 다음 사항을 준수해야 합니다:</p>
+            <ul>
+                <li>2자 이상 12자 이하로 작성</li>
+                <li>타인의 권리를 침해하는 내용 금지</li>
+                <li>욕설, 비속어, 혐오 표현 금지</li>
+            </ul>
+
+            <h3>제4조 (개인정보 수집 및 이용)</h3>
+            <p><strong>1. 회사가 수집하는 정보:</strong></p>
+            <ul>
+                <li>닉네임 (이용자가 직접 입력)</li>
+                <li>게임 점수</li>
+                <li>기기 고유 식별자 (UUID, 앱 생성)</li>
+            </ul>
+            <p><strong>2. 수집 목적:</strong></p>
+            <ul>
+                <li>글로벌 랭킹 서비스 제공</li>
+                <li>닉네임 중복 확인</li>
+                <li>게임 기록 저장</li>
+            </ul>
+            <p><strong>3.</strong> 개인정보는 서비스 제공 목적으로만 사용되며, 제3자에게 제공되지 않습니다.</p>
+
+            <h3>제5조 (이용자의 의무)</h3>
+            <p><strong>1. 이용자는 다음 행위를 하여서는 안 됩니다:</strong></p>
+            <ul>
+                <li>부정한 방법으로 점수 조작</li>
+                <li>타인의 닉네임 도용</li>
+                <li>서비스 운영 방해</li>
+            </ul>
+            <p><strong>2.</strong> 위반 시 서비스 이용이 제한될 수 있습니다.</p>
+
+            <h3>제6조 (서비스 중단)</h3>
+            <p><strong>1. 회사는 다음의 경우 서비스 제공을 일시적으로 중단할 수 있습니다:</strong></p>
+            <ul>
+                <li>시스템 점검, 유지보수</li>
+                <li>천재지변, 국가비상사태</li>
+                <li>서비스 설비의 장애</li>
+            </ul>
+
+            <h3>제7조 (면책조항)</h3>
+            <p><strong>1.</strong> 회사는 천재지변 또는 이에 준하는 불가항력으로 인하여 서비스를 제공할 수 없는 경우 책임이 면제됩니다.</p>
+            <p><strong>2.</strong> 회사는 이용자의 귀책사유로 인한 서비스 이용 장애에 대하여 책임지지 않습니다.</p>
+
+            <h3>제8조 (준거법 및 재판관할)</h3>
+            <p><strong>1.</strong> 본 약관은 대한민국 법률에 따라 규율됩니다.</p>
+            <p><strong>2.</strong> 서비스 이용과 관련한 분쟁은 회사의 본사 소재지를 관할하는 법원을 전속 관할로 합니다.</p>
+
+            <h3>제9조 (문의)</h3>
+            <ul>
+                <li><strong>회사명:</strong> Unibox Labs</li>
+                <li><strong>이메일:</strong> rhsoh1@gmail.com</li>
+            </ul>
+
+            <hr style="margin: 30px 0; border: none; border-top: 1px solid #e0e0e0;">
+            <p><em>본 약관은 2025년 11월부터 시행됩니다.</em></p>
+        </div>
+
+        <!-- English Privacy -->
+        <div id="privacy-en" class="content">
+            <h2>Privacy Policy</h2>
+            <p><em>Last Updated: November 2025</em></p>
+
+            <p>Unibox Labs (hereinafter "Company") values your privacy and complies with relevant laws including the Personal Information Protection Act and the Act on Promotion of Information and Communications Network Utilization and Information Protection.</p>
+
+            <h3>1. Personal Information Collected</h3>
+            <p>The Company collects only the minimum information necessary to provide services:</p>
+
+            <p><strong>Required Information:</strong></p>
+            <ul>
+                <li><strong>Nickname:</strong> User-entered in-game nickname (2-12 characters)</li>
+                <li><strong>Game Score:</strong> Gameplay records and high scores</li>
+                <li><strong>Game UUID:</strong> Unique identifier automatically generated on first app launch</li>
+            </ul>
+
+            <p><strong>Automatically Collected Information:</strong></p>
+            <ul>
+                <li><strong>Timestamp:</strong> Score recording time</li>
+                <li><strong>Firebase Anonymous Auth ID:</strong> Anonymous user ID for Firebase service</li>
+            </ul>
+
+            <p><strong>Information NOT Collected:</strong></p>
+            <ul>
+                <li>Personal identification information (name, date of birth, phone number, address)</li>
+                <li>Device unique identifiers (IMEI, Android ID, etc.)</li>
+                <li>Location information</li>
+                <li>Contacts</li>
+            </ul>
+
+            <h3>2. Purpose of Collection and Use</h3>
+            <p>Collected information is used only for the following purposes:</p>
+            <ul>
+                <li><strong>Service Provision:</strong> Save gameplay records, provide global ranking service</li>
+                <li><strong>Nickname Management:</strong> Check nickname duplicates, display rankings</li>
+                <li><strong>Game Record Management:</strong> Save and sync high scores, restore data after app reinstallation</li>
+            </ul>
+
+            <h3>3. Retention and Use Period</h3>
+            <ul>
+                <li><strong>Retention Period:</strong> Until the user deletes the app</li>
+                <li><strong>Destruction Method:</strong> Local data is automatically deleted upon app deletion; server data can be deleted upon request</li>
+            </ul>
+
+            <h3>4. Provision to Third Parties</h3>
+            <p>The Company does not provide personal information to third parties, except in the following cases:</p>
+            <ul>
+                <li>When the user has given prior consent</li>
+                <li>When required by law or requested by investigative agencies following legal procedures</li>
+            </ul>
+
+            <h3>5. Destruction of Personal Information</h3>
+            <p>The Company destroys personal information in the following cases:</p>
+            <ul>
+                <li><strong>Upon app deletion:</strong> Automatic deletion of locally stored data</li>
+                <li><strong>Upon user request:</strong> Server data can be deleted via email request</li>
+                <li><strong>Upon service termination:</strong> Destruction of all user data</li>
+            </ul>
+
+            <h3>6. User Rights</h3>
+            <p>Users have the following rights:</p>
+            <ul>
+                <li><strong>Data deletion request:</strong> Contact rhsoh1@gmail.com</li>
+                <li><strong>Nickname change:</strong> Set new nickname after app reinstallation</li>
+                <li><strong>Ranking data deletion:</strong> Processed upon email request</li>
+            </ul>
+
+            <h3>7. Privacy Officer</h3>
+            <p>For privacy-related inquiries:</p>
+            <ul>
+                <li><strong>Company:</strong> Unibox Labs</li>
+                <li><strong>Email:</strong> rhsoh1@gmail.com</li>
+                <li><strong>Response Time:</strong> Within 3 business days</li>
+            </ul>
+
+            <h3>8. Children Under 14</h3>
+            <p>This service is not intended for children under 14, and we do not knowingly collect personal information from children under 14.</p>
+
+            <h3>9. Security Measures</h3>
+            <p><strong>Technical Measures:</strong></p>
+            <ul>
+                <li>Access control through Firebase security rules</li>
+                <li>HTTPS encryption during data transmission</li>
+                <li>Data access limited to authenticated users only</li>
+            </ul>
+
+            <p><strong>Administrative Measures:</strong></p>
+            <ul>
+                <li>Collecting only minimum necessary information</li>
+                <li>Designation of privacy officer</li>
+                <li>Regular security inspections</li>
+            </ul>
+
+            <hr style="margin: 30px 0; border: none; border-top: 1px solid #e0e0e0;">
+            <p><strong>Effective Date:</strong> November 2025</p>
+            <p><strong>Contact:</strong> rhsoh1@gmail.com</p>
+        </div>
+
+        <!-- Korean Privacy -->
+        <div id="privacy-ko" class="content">
+            <h2>개인정보 처리방침</h2>
+            <p><em>최종 업데이트: 2025년 11월</em></p>
+
+            <p>Unibox Labs(이하 "회사")는 이용자의 개인정보를 중요시하며, 「개인정보 보호법」, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 등 관련 법령을 준수하고 있습니다.</p>
+
+            <h3>1. 수집하는 개인정보의 항목</h3>
+            <p>회사는 서비스 제공을 위해 최소한의 정보만을 수집합니다:</p>
+
+            <p><strong>필수 수집 정보:</strong></p>
+            <ul>
+                <li><strong>닉네임:</strong> 이용자가 직접 입력한 게임 내 닉네임 (2-12자)</li>
+                <li><strong>게임 점수:</strong> 게임 플레이 기록 및 최고 점수</li>
+                <li><strong>게임 UUID:</strong> 앱 최초 실행 시 자동 생성되는 고유 식별자</li>
+            </ul>
+
+            <p><strong>자동 수집 정보:</strong></p>
+            <ul>
+                <li><strong>타임스탬프:</strong> 점수 기록 시간</li>
+                <li><strong>Firebase 익명 인증 ID:</strong> Firebase 서비스 이용을 위한 익명 사용자 ID</li>
+            </ul>
+
+            <p><strong>수집하지 않는 정보:</strong></p>
+            <ul>
+                <li>이름, 생년월일, 전화번호, 주소 등 개인 식별 정보</li>
+                <li>기기의 고유 식별자 (IMEI, Android ID 등)</li>
+                <li>위치 정보</li>
+                <li>연락처</li>
+            </ul>
+
+            <h3>2. 개인정보의 수집 및 이용 목적</h3>
+            <p>수집된 정보는 다음의 목적으로만 사용됩니다:</p>
+            <ul>
+                <li><strong>서비스 제공:</strong> 게임 플레이 기록 저장, 글로벌 랭킹 서비스 제공</li>
+                <li><strong>닉네임 관리:</strong> 닉네임 중복 확인, 랭킹 표시</li>
+                <li><strong>게임 기록 관리:</strong> 최고 점수 저장 및 동기화, 앱 재설치 시 데이터 복구</li>
+            </ul>
+
+            <h3>3. 개인정보의 보유 및 이용기간</h3>
+            <ul>
+                <li><strong>보유기간:</strong> 이용자가 앱을 삭제할 때까지</li>
+                <li><strong>파기 방법:</strong> 앱 삭제 시 로컬 데이터는 자동 삭제되며, 서버 데이터는 요청 시 삭제 가능</li>
+            </ul>
+
+            <h3>4. 개인정보의 제3자 제공</h3>
+            <p>회사는 이용자의 개인정보를 제3자에게 제공하지 않습니다. 단, 다음의 경우 예외로 합니다:</p>
+            <ul>
+                <li>이용자가 사전에 동의한 경우</li>
+                <li>법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우</li>
+            </ul>
+
+            <h3>5. 개인정보의 파기</h3>
+            <p>회사는 다음의 경우 개인정보를 파기합니다:</p>
+            <ul>
+                <li><strong>앱 삭제 시:</strong> 로컬 저장 데이터 자동 삭제</li>
+                <li><strong>이용자 요청 시:</strong> 이메일 요청을 통해 서버 데이터 삭제 가능</li>
+                <li><strong>서비스 종료 시:</strong> 모든 이용자 데이터 파기</li>
+            </ul>
+
+            <h3>6. 이용자의 권리</h3>
+            <p>이용자는 다음의 권리를 가집니다:</p>
+            <ul>
+                <li><strong>데이터 삭제 요청:</strong> rhsoh1@gmail.com으로 요청</li>
+                <li><strong>닉네임 변경:</strong> 앱 재설치 후 새 닉네임 설정 가능</li>
+                <li><strong>랭킹 데이터 삭제:</strong> 이메일 요청 시 처리</li>
+            </ul>
+
+            <h3>7. 개인정보 보호책임자</h3>
+            <p>개인정보와 관련한 문의사항:</p>
+            <ul>
+                <li><strong>회사명:</strong> Unibox Labs</li>
+                <li><strong>이메일:</strong> rhsoh1@gmail.com</li>
+                <li><strong>처리기간:</strong> 영업일 기준 3일 이내</li>
+            </ul>
+
+            <h3>8. 만 14세 미만 아동의 개인정보 처리</h3>
+            <p>본 서비스는 만 14세 미만 아동을 대상으로 하지 않으며, 만 14세 미만 아동의 개인정보를 고의로 수집하지 않습니다.</p>
+
+            <h3>9. 기술적/관리적 보호조치</h3>
+            <p><strong>기술적 조치:</strong></p>
+            <ul>
+                <li>Firebase 보안 규칙을 통한 접근 제어</li>
+                <li>데이터 전송 시 HTTPS 암호화</li>
+                <li>인증된 사용자만 데이터 접근 가능</li>
+            </ul>
+
+            <p><strong>관리적 조치:</strong></p>
+            <ul>
+                <li>최소한의 정보만 수집</li>
+                <li>개인정보 처리 담당자 지정</li>
+                <li>정기적인 보안 점검</li>
+            </ul>
+
+            <hr style="margin: 30px 0; border: none; border-top: 1px solid #e0e0e0;">
+            <p><strong>시행일:</strong> 2025년 11월</p>
+            <p><strong>문의:</strong> rhsoh1@gmail.com</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>Unibox Labs</strong></p>
+            <p>Email: rhsoh1@gmail.com</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">© 2025 Unibox Labs. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        let currentLang = 'en';
+        let currentTab = 'terms';
+
+        function switchLang(lang) {
+            currentLang = lang;
+            updateContent();
+
+            // Update language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Update tab labels
+            const tabs = document.querySelectorAll('.tab');
+            if (lang === 'en') {
+                tabs[0].textContent = 'Terms of Service';
+                tabs[1].textContent = 'Privacy Policy';
+            } else {
+                tabs[0].textContent = '서비스 이용약관';
+                tabs[1].textContent = '개인정보 처리방침';
+            }
+        }
+
+        function switchTab(tab) {
+            currentTab = tab;
+            updateContent();
+
+            // Update tab buttons
+            document.querySelectorAll('.tab').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        function updateContent() {
+            // Hide all content
+            document.querySelectorAll('.content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Show selected content
+            const contentId = `${currentTab}-${currentLang}`;
+            document.getElementById(contentId).classList.add('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
